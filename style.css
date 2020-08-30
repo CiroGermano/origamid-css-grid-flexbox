@@ -11,6 +11,16 @@
    color: white;
  }
 
+ h1 {
+   text-align: center;
+   margin-top: 100px;
+ }
+
+ img {
+   max-width: 100%;
+   display: block;
+ }
+
  .header {
    background: #1D1E20;
    display: flex;
@@ -31,5 +41,20 @@
 
  .menu li a {
    display: block;
-   padding: 10px;  /* aumentando a área de click */
+   padding: 10px;
+   /* aumentando a área de click */
+ }
+
+ /* CSS FLEXBOX */
+
+ .flex {
+   display: flex;
+   flex-wrap: wrap; /* pode quebrar pra linha de baixo */
+   max-width: 800px;
+   margin: 0 auto;
+ }
+
+ .flex>div {
+   flex: 1 200px; /* pode expandir / pode ficar menor (flex shrink) / sempre vai ter uma base de 200px ou então vai quebrar para a linha de baixo*/
+   margin: 10px;
  }
