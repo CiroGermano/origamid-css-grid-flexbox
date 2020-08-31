@@ -28,8 +28,8 @@
  .header {
    background: #1D1E20;
    display: flex;
-   flex-wrap: wrap;
    /* quando a tela for muito pequena um item vai ser deslocado para a parte de baixo */
+   flex-wrap: wrap;
    justify-content: space-between;
    align-items: center;
    padding: 20px;
@@ -45,8 +45,8 @@
 
  .menu li a {
    display: block;
-   padding: 10px;
    /* aumentando a área de click */
+   padding: 10px;
  }
 
  /* CSS FLEXBOX */
@@ -110,8 +110,8 @@
 
  .grid2 {
    display: grid;
-   grid-template-columns: 1fr 200px;
    /* video expande ou diminui, mas o side bar vai ficar sempre entre os 200px*/
+   grid-template-columns: 1fr 200px;
    grid-gap: 20px;
    max-width: 800px;
    padding: 10px;
@@ -126,14 +126,56 @@
    .grid2 {
      grid-template-columns: 1fr;
    }
-
    .sidebar {
      display: flex;
      overflow: scroll;
    }
-
-   .sidebar > div {
-     flex: 1 0 200px;  /* expande / não diminui / tamanho mínimo 200px */
+   .sidebar>div {
+     flex: 1 0 200px;
+     /* expande / não diminui / tamanho mínimo 200px */
      margin: 0 10px;
    }
+ }
+
+ /* CSS Grid 3 */
+
+ .grid3 {
+   display: grid;
+   grid-template-columns: repeat(2, 1fr);
+   /* grid-template-rows: repeat(3, 1fr); */
+   grid-gap: 20px;
+   margin: 0 auto;
+   max-width: 800px;
+   padding: 10px;
+ }
+
+ /* Poderíamos criar uma classe para a primeira div, mas vamos usar o que o grid nos oferece */
+
+ .grid3-item:nth-child(1) {
+   /* ocupar da linha 1 até a linha 3*/
+   grid-row: 1 / 3;
+ }
+
+ .grid3-item {
+   display: grid;
+ }
+
+ .grid3-item img {
+   grid-column: 1;
+   grid-row: 1;
+   align-self: end;
+ }
+
+ .grid3-item img#lobo5 {
+   width: 100%;
+   height: 100%;
+ }
+
+ .grid3-item p {
+   background: rgba(0, 0, 0, 0.6);
+   padding: 10px;
+   color: white;
+   grid-column: 1;
+   grid-row: 1;
+   align-self: end;
  }
